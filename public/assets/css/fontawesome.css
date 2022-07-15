@@ -1,0 +1,268 @@
+@font-face {
+  font-family: 'fontawesome';
+  src:  url('../fonts/fontawesome.eot?zgcucn');
+  src:  url('../fonts/fontawesome.eot?zgcucn#iefix') format('embedded-opentype'),
+    url('../fonts/fontawesome.ttf?zgcucn') format('truetype'),
+    url('../fonts/fontawesome.woff?zgcucn') format('woff'),
+    url('../fonts/fontawesome.svg?zgcucn#fontawesome') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.fa {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/* makes the font 33% larger relative to the icon container */
+.fa-lg {
+  font-size: 1.33333333em;
+  line-height: 0.75em;
+  vertical-align: -15%;
+}
+.fa-2x {
+  font-size: 2em;
+}
+.fa-3x {
+  font-size: 3em;
+}
+.fa-4x {
+  font-size: 4em;
+}
+.fa-5x {
+  font-size: 5em;
+}
+.fa-fw {
+  width: 1.28571429em;
+  text-align: center;
+}
+.fa-ul {
+  padding-left: 0;
+  margin-left: 2.14285714em;
+  list-style-type: none;
+}
+.fa-ul > li {
+  position: relative;
+}
+.fa-li {
+  position: absolute;
+  left: -2.14285714em;
+  width: 2.14285714em;
+  top: 0.14285714em;
+  text-align: center;
+}
+.fa-li.fa-lg {
+  left: -1.85714286em;
+}
+.fa-border {
+  padding: .2em .25em .15em;
+  border: solid 0.08em #eeeeee;
+  border-radius: .1em;
+}
+.pull-right {
+  float: right;
+}
+.pull-left {
+  float: left;
+}
+.fa.pull-left {
+  margin-right: .3em;
+}
+.fa.pull-right {
+  margin-left: .3em;
+}
+.fa-spin {
+  -webkit-animation: fa-spin 2s infinite linear;
+  animation: fa-spin 2s infinite linear;
+}
+@-webkit-keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+@keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+.fa-rotate-90 {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+.fa-rotate-180 {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.fa-rotate-270 {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+  -webkit-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  transform: rotate(270deg);
+}
+.fa-flip-horizontal {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1);
+  -webkit-transform: scale(-1, 1);
+  -ms-transform: scale(-1, 1);
+  transform: scale(-1, 1);
+}
+.fa-flip-vertical {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1);
+  -webkit-transform: scale(1, -1);
+  -ms-transform: scale(1, -1);
+  transform: scale(1, -1);
+}
+:root .fa-rotate-90,
+:root .fa-rotate-180,
+:root .fa-rotate-270,
+:root .fa-flip-horizontal,
+:root .fa-flip-vertical {
+  filter: none;
+}
+.fa-stack {
+  position: relative;
+  display: inline-block;
+  width: 2em;
+  height: 2em;
+  line-height: 2em;
+  vertical-align: middle;
+}
+.fa-stack-1x,
+.fa-stack-2x {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+.fa-stack-1x {
+  line-height: inherit;
+}
+.fa-stack-2x {
+  font-size: 2em;
+}
+.fa-inverse {
+  color: #ffffff;
+}
+
+.fa-homeassistant:before {
+  content: "\e900";
+  color: #41bdf5;
+}
+.fa-uniF007:before {
+  content: "\f007";
+}
+.fa-uniF011:before {
+  content: "\f011";
+}
+.fa-uniF013:before {
+  content: "\f013";
+}
+.fa-uniF07C:before {
+  content: "\f07c";
+}
+.fa-uniF085:before {
+  content: "\f085";
+}
+.fa-uniF099:before {
+  content: "\f099";
+}
+.fa-uniF09A:before {
+  content: "\f09a";
+}
+.fa-uniF0AC:before {
+  content: "\f0ac";
+}
+.fa-uniF0C0:before {
+  content: "\f0c0";
+}
+.fa-uniF0E0:before {
+  content: "\f0e0";
+}
+.fa-uniF0ED:before {
+  content: "\f0ed";
+}
+.fa-uniF0EE:before {
+  content: "\f0ee";
+}
+.fa-uniF118:before {
+  content: "\f118";
+}
+.fa-uniF119:before {
+  content: "\f119";
+}
+.fa-uniF130:before {
+  content: "\f130";
+}
+.fa-uniF131:before {
+  content: "\f131";
+}
+.fa-uniF137:before {
+  content: "\f137";
+}
+.fa-uniF138:before {
+  content: "\f138";
+}
+.fa-uniF139:before {
+  content: "\f139";
+}
+.fa-uniF13A:before {
+  content: "\f13a";
+}
+.fa-uniF15C:before {
+  content: "\f15c";
+}
+.fa-uniF166:before {
+  content: "\f166";
+}
+.fa-uniF167:before {
+  content: "\f167";
+}
+.fa-uniF17A:before {
+  content: "\f17a";
+}
+.fa-uniF19D:before {
+  content: "\f19d";
+}
+.fa-uniF1F0:before {
+  content: "\f1f0";
+}
+.fa-uniF1F1:before {
+  content: "\f1f1";
+}
+.fa-uniF1F4:before {
+  content: "\f1f4";
+}
+.fa-uniF200:before {
+  content: "\f200";
+}
+.fa-uniF02D:before {
+  content: "\f02d";
+}
+.fa-uniF073:before {
+  content: "\f073";
+}
+.fa-qrcode:before {
+  content: "\e938";
+}
+.fa-cart:before {
+  content: "\e93a";
+}
+.fa-bin:before {
+  content: "\e9ac";
+}

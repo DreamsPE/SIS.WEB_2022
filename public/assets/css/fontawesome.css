@@ -160,6 +160,9 @@
   color: #ffffff;
 }
 
+.fa-document-edit:before {
+  content: "\e901";
+}
 .fa-homeassistant:before {
   content: "\e900";
   color: #41bdf5;
@@ -256,6 +259,9 @@
 }
 .fa-uniF073:before {
   content: "\f073";
+}
+.fa-quill:before {
+  content: "\e907";
 }
 .fa-qrcode:before {
   content: "\e938";

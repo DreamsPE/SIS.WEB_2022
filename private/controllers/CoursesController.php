@@ -36,8 +36,8 @@ class CoursesController extends Controller
           //  $this->redirect('login');
         //}
 
-        $persona =  new Course;
-        $personas  = $persona->findAll();
+        $course =  new Course;
+        $data  = $course->findAll();
 
         $errors =  array();
         $crumbs[] = ['Principal', ''];
@@ -48,10 +48,39 @@ class CoursesController extends Controller
             $this->view('courses\create', [
                 'crumbs' => $crumbs,
                 'errors' => $errors,
-                'rows' => $personas
+                'rows' => $data
             ]);
         //} else {
            // $this->view('access-denied');
         //}
+    }
+
+    public function store()
+    {
+        //if (!Auth::logged_in()) {
+        //    $this->redirect('login');
+        //}
+
+        $errors = array();
+        //if (count($_POST) > 0 && Auth::access('super_admin')) {
+            $course = new Course();
+            
+            if ($course->validate($_POST)) {
+                $_POST['date'] = date("Y-m-d H:i:s");
+                
+                $course->insert($_POST);
+                $this->redirect('condominios');
+            } else {
+                $errors = $course->errors;
+            }
+        //}
+        $crumbs[] = ['Principal', ''];
+        $crumbs[] = ['Asignaturas', 'Courses'];
+        $crumbs[] = ['Nuevo', 'courses/create'];
+
+        $this->view('condominios\create', [
+            'crumbs' => $crumbs,
+            'errors' => $errors
+        ]);
     }
 }

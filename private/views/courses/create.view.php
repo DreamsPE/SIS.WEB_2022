@@ -9,7 +9,7 @@ $this->view('includes/header')
 	<a style="font-size: 11px" href="<?=ROOT?>/courses/index" class="btn btn-danger btn-sm pull-right"><i class=""></i> REGRESAR </a>
     <h1 class="page-head-line"></h1>
 	<br>
-	<form action="<?= ROOT ?>/inmuebles/store" method="POST">
+	<form action="<?= ROOT ?>/courses/store" method="POST">
 
 		<div class="row">
 			<div class="col-sm-4 col-md-3">
@@ -52,19 +52,7 @@ $this->view('includes/header')
 						<label for="area">Area</label>
 						<input class="form-control" value="<?= get_var('area') ?>" type="number" id="area" name="area" step="0.01">
 					</div>
-					<?php if (count($rows) > 0) : ?>
-					<div class="form-group col-md-6">
-						<label for="propietario">Propietarios</label>
-						<select id="propietario" class="form-control" name="persona_id">
-							<option selected>---Seleccionar---</option>
-							<?php foreach ($rows as $key => $row) :?>
-								<option value="<?=$row->id?>"><?=$row->nombre?> <?=$row->apellido_1?></option>
-							<?php endforeach?>
-							
-						</select>
-
-					</div>
-					<?php endif?>
+					
 				</div>
 
 				<button style="font-size: 11px" class="btn btn-info btn-sm">GUARDAR</button>

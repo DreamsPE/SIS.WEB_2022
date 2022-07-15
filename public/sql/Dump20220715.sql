@@ -146,12 +146,9 @@ CREATE TABLE `grado` (
   `Seccion` char(10) DEFAULT NULL,
   `Detalle` varchar(30) DEFAULT NULL,
   `Id_Nivel` int DEFAULT NULL,
-  `Id_Tutor` char(18) DEFAULT NULL,
   PRIMARY KEY (`Id_Grado`),
   KEY `R_67` (`Id_Nivel`),
-  KEY `R_68` (`Id_Tutor`),
-  CONSTRAINT `R_67` FOREIGN KEY (`Id_Nivel`) REFERENCES `nivel` (`Id_Nivel`),
-  CONSTRAINT `R_68` FOREIGN KEY (`Id_Tutor`) REFERENCES `tutor` (`Id_Tutor`)
+  CONSTRAINT `R_67` FOREIGN KEY (`Id_Nivel`) REFERENCES `nivel` (`Id_Nivel`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -374,32 +371,6 @@ LOCK TABLES `profesor_grado` WRITE;
 /*!40000 ALTER TABLE `profesor_grado` ENABLE KEYS */;
 UNLOCK TABLES;
 
---
--- Table structure for table `tutor`
---
-
-DROP TABLE IF EXISTS `tutor`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `tutor` (
-  `Id_Tutor` char(18) NOT NULL,
-  `Id_Profesor` char(18) NOT NULL,
-  `Detalle` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (`Id_Tutor`),
-  KEY `R_11` (`Id_Profesor`),
-  CONSTRAINT `R_11` FOREIGN KEY (`Id_Profesor`) REFERENCES `profesor` (`Id_Profesor`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `tutor`
---
-
-LOCK TABLES `tutor` WRITE;
-/*!40000 ALTER TABLE `tutor` DISABLE KEYS */;
-INSERT INTO `tutor` VALUES ('1','1','PRUEBA TUTOR HISTORIA');
-/*!40000 ALTER TABLE `tutor` ENABLE KEYS */;
-UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;

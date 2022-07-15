@@ -39,15 +39,15 @@ $this->view('includes/header')
         <td><?= $row->Detalle?></td>
         <td>
             <a href="<?= ROOT ?>/condominios/edit/<?= $row->id ?>">
-                <button class="btn-sm btn btn-info text-white"><i class="fa fa-bin"></i></button>
+                <button class="btn-sm btn btn-info text-white"><i class="fa fa-uniF044"></i></button>
             </a>
 
             <a href="<?= ROOT ?>/condominios/destroy/<?= $row->id ?>">
-                <button class="btn-sm btn btn-danger"><i class="fa fa-bin"></i></button>
+                <button class="btn-sm btn btn-danger"><i class="fa fa-uniF044"></i></button>
             </a>
 
             <a href="<?= ROOT ?>/users/switch_condominio/<?= $row->id ?>">
-                <button class="btn-sm btn btn-success">Cambiar a <i class="fa fa-chevron-right"></i></button>
+                <button class="btn-sm btn btn-success">Cambiar a <i class="fa fa-uniF044"></i></button>
             </a>
         </td>
     </tr>

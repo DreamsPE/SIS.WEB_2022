@@ -39,7 +39,7 @@ $this->view('includes/header')
         <td><?= $row->Detalle?></td>
         <td>
             <a href="<?= ROOT ?>/condominios/edit/<?= $row->id ?>">
-                <button class="btn-sm btn btn-info text-white"><i class="fa fa-edit"></i></button>
+                <button class="btn-sm btn btn-info text-white"><i class="fa fa-bin"></i></button>
             </a>
 
             <a href="<?= ROOT ?>/condominios/destroy/<?= $row->id ?>">

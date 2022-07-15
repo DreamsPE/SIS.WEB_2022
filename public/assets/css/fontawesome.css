@@ -160,14 +160,7 @@
   color: #ffffff;
 }
 
-.fa-document-edit:before {
-  content: "\e901";
-}
-.fa-homeassistant:before {
-  content: "\e900";
-  color: #41bdf5;
-}
-.fa-uniF007:before {
+fa-uniF007:before {
   content: "\f007";
 }
 .fa-uniF011:before {
@@ -176,11 +169,20 @@
 .fa-uniF013:before {
   content: "\f013";
 }
+.fa-uniF044:before {
+  content: "\f044";
+}
 .fa-uniF07C:before {
   content: "\f07c";
 }
 .fa-uniF085:before {
   content: "\f085";
+}
+.fa-uniF08B:before {
+  content: "\f08b";
+}
+.fa-uniF090:before {
+  content: "\f090";
 }
 .fa-uniF099:before {
   content: "\f099";
@@ -227,6 +229,9 @@
 .fa-uniF13A:before {
   content: "\f13a";
 }
+.fa-uniF14B:before {
+  content: "\f14b";
+}
 .fa-uniF15C:before {
   content: "\f15c";
 }
@@ -259,9 +264,6 @@
 }
 .fa-uniF073:before {
   content: "\f073";
-}
-.fa-quill:before {
-  content: "\e907";
 }
 .fa-qrcode:before {
   content: "\e938";

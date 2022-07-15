@@ -1,18 +1,19 @@
 <?php
 $this->view('includes/header')
 ?>
-                    <div class="col-md-12">
-                        <h1 class="page-head-line">Branch  
-				
-						<a href="<?=ROOT?>/courses/create" class="btn btn-primary btn-sm pull-right"><i class="glyphicon glyphicon-plus"></i> Add </a>
-				
-						</h1>
+<?php $this->view('includes/crumbs', ['crumbs' => $crumbs]) ?>
 
+                    <div class="col-md-12">
+                    <a style="font-size: 11px" href="<?=ROOT?>/courses/create" class="btn btn-danger btn-sm pull-right"><i class=""></i> AGREGAR </a>
+                        <h1 class="page-head-line"></h1>
+                        <br>
 <link href="assets/css/datatable/datatable.css" rel="stylesheet" />
 		<div class="panel panel-default">
                         <div class="panel-heading">
-                            Manage Branch  
+                        Administrar asignatura:  
                         </div>
+
+
                         <div class="panel-body">
                              <div class="table-sorting table-responsive">
 
@@ -33,21 +34,21 @@ $this->view('includes/header')
 <?php foreach ($rows as $row) : ?>
 
     <tr>
-        <td><button class="btn btn-sm btn-primary"><i class="fa fa-chevron-right"></i></button></td>
+        <td>#</td>
         <td><?= $row->Id_Curso ?></td>
         <td><?= $row->nombreCurso ?></td>
         <td><?= $row->Detalle?></td>
         <td>
             <a href="<?= ROOT ?>/condominios/edit/<?= $row->id ?>">
-                <button class="btn-sm btn btn-info text-white"><i class="fa fa-uniF044"></i></button>
+                <button class="btn btn-success btn-xs"><i class="fa fa-uniF044"></i> Modifica </button>
             </a>
 
             <a href="<?= ROOT ?>/condominios/destroy/<?= $row->id ?>">
-                <button class="btn-sm btn btn-danger"><i class="fa fa-uniF044"></i></button>
+                <button class="btn btn-danger btn-xs"><i class="fa fa-bin"></i> Elimina </button>
             </a>
 
-            <a href="<?= ROOT ?>/users/switch_condominio/<?= $row->id ?>">
-                <button class="btn-sm btn btn-success">Cambiar a <i class="fa fa-uniF044"></i></button>
+            <a href="<?= ROOT ?>/condominios/destroy/<?= $row->id ?>">
+                <button class="btn btn-info btn-xs"><i class="fa fa-uniF08B"></i> Información</button>
             </a>
         </td>
     </tr>
@@ -56,14 +57,12 @@ $this->view('includes/header')
 <?php else : ?>
 <h4>No se encontro registro</h4>
 <?php endif; ?>
-                                        
-                                        
                                     </tbody>
                                 </table>
                             </div>
                         </div>
                     </div>
-                     
+                    <h1 style="font-size: 10px" class="page-subhead-line">Información de <strong>asignaturas</strong> registradas. </h1>
 	<script src="assets/js/dataTable/jquery.dataTables.min.js"></script>
      <script>
          $(document).ready(function () {
@@ -78,6 +77,7 @@ $this->view('includes/header')
 		 
 	
     </script>
+    
 <?php
 $this->view('includes/footer')
 ?>

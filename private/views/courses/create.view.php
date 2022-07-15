@@ -1,50 +1,82 @@
 <?php
 $this->view('includes/header')
 ?>          
-            <script type="text/javascript" src="assets/js/validation/jquery.validate.min.js"></script>	
-                <div class="col-sm-8 col-sm-offset-2">            
-                    <div class="panel panel-primary">
-                        <div class="panel-heading">
-                        </div>
+<div class="container-fluid p-4 shadow mx-auto" style="max-width: 1000px;">
+	<?php $this->view('includes/crumbs', ['crumbs' => $crumbs]) ?>
 
 
-						<form action="branch.php" method="post" id="signupForm1" class="form-horizontal">
-                        <div class="panel-body">
-                            <div class="form-group">
-								<label class="col-sm-2 control-label" for="Old">Branch </label>
-								<div class="col-sm-10">
-									<input type="text" class="form-control" id="branch" name="branch" value=""  />
-								</div>
-							</div>
+	<div class="col-md-12">
+	<a style="font-size: 11px" href="<?=ROOT?>/courses/index" class="btn btn-danger btn-sm pull-right"><i class=""></i> REGRESAR </a>
+    <h1 class="page-head-line"></h1>
+	<br>
+	<form action="<?= ROOT ?>/inmuebles/store" method="POST">
+
+		<div class="row">
+			<div class="col-sm-4 col-md-3">
+				<img src="<?= ROOT ?>/assets/no_image.jpg" class="border border-primary d-block mx-auto" style="width:100%">
+
+			</div>
+			<div class="col-sm-8 col-md-9">
+				<?php if (count($errors) > 0) : ?>
+					<div class="alert alert-warning alert-dismissible fade show p-1" role="alert">
+						<strong>Errors:</strong>
+						<?php foreach ($errors as $error) : ?>
+							<br><?= $error ?>
+						<?php endforeach; ?>
+						<span type="button" class="close" data-bs-dismiss="alert" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</span>
+					</div>
+
+				<?php endif; ?>
+
+				<div class="row my-2">
+					<div class="form-group col-md-6">
+						<label for="tipo">Tipo Inmueble</label>
+						<select id="tipo" class="form-control" name="tipo">
+							<option selected>---Seleccionar---</option>
+							<option value="departamento">Departamento</option>
+							<option value="vivienda">Vivienda</option>
+							<option value="cochera">Cochera</option>
+							<option value="deposito">Deposito</option>
+						</select>
+					</div>
+					<div class="form-group col-md-6">
+						<label for="numeracion">Numeracion</label>
+						<input type="number" value="<?= get_var('numeracion') ?>" class="form-control" id="numeracion" name="numeracion">
+					</div>
+				</div>
+
+				<div class="row my-2">
+					<div class="form-group col-md-6">
+						<label for="area">Area</label>
+						<input class="form-control" value="<?= get_var('area') ?>" type="number" id="area" name="area" step="0.01">
+					</div>
+					<?php if (count($rows) > 0) : ?>
+					<div class="form-group col-md-6">
+						<label for="propietario">Propietarios</label>
+						<select id="propietario" class="form-control" name="persona_id">
+							<option selected>---Seleccionar---</option>
+							<?php foreach ($rows as $key => $row) :?>
+								<option value="<?=$row->id?>"><?=$row->nombre?> <?=$row->apellido_1?></option>
+							<?php endforeach?>
 							
-							
-							<div class="form-group">
-								<label class="col-sm-2 control-label" for="Password"> Address </label>
-								<div class="col-sm-10">
-	                            <textarea class="form-control" id="address" name="address"></textarea >
-								</div>
-							</div>
-							
-							
-							<div class="form-group">
-								<label class="col-sm-2 control-label" for="Confirm"> Detail</label>
-								<div class="col-sm-10">
-									    <textarea class="form-control" name="detail" id="detail"></textarea >
-								</div>
-							</div>
-						
-						    <div class="form-group">
-								<div class="col-sm-8 col-sm-offset-2">
-								<input type="hidden" name="id" value="">
-								<input type="hidden" name="action" value="">
-								
-								<button type="submit" name="save" class="btn btn-primary">Save </button>
-								</div>
-						    </div>
-                        </div>
-					    </form>
-                    </div>
-                </div>
+						</select>
+
+					</div>
+					<?php endif?>
+				</div>
+
+				<button style="font-size: 11px" class="btn btn-info btn-sm">GUARDAR</button>
+
+			</div>
+		</div>
+		
+		<h1 style="font-size: 10px" class="page-subhead-line">Seleccione <strong>guardar</strong> para completar el registro o <strong>regresar</strong> para volver a la pagina anterior.</h1>
+	</form>
+</div>
+</div>
+
 <?php
 $this->view('includes/footer')
 ?>

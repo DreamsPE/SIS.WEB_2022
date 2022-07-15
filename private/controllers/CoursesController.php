@@ -10,8 +10,6 @@ class CoursesController extends Controller
 			//$this->redirect('login');
 		//}
 		
-		// code...
-		//$this->view('courses\index');
 
 		//if (!Auth::logged_in()) {
         //    $this->redirect('login');
@@ -21,8 +19,8 @@ class CoursesController extends Controller
 
         $data = $course->findAll();
 
-        $crumbs[] = ['Dashboard', ''];
-        $crumbs[] = ['Condominio', 'condominios'];
+        $crumbs[] = ['Principal', ''];
+        $crumbs[] = ['Asignaturas', 'courses'];
 
         $this->view('courses\index', [
             'rows' => $data,
@@ -34,8 +32,26 @@ class CoursesController extends Controller
 
 	public function create()
     {
-    
-        $this->view('courses\create');
+        //if (!Auth::logged_in()) {
+          //  $this->redirect('login');
+        //}
 
-	}
+        $persona =  new Course;
+        $personas  = $persona->findAll();
+
+        $errors =  array();
+        $crumbs[] = ['Principal', ''];
+        $crumbs[] = ['Asignaturas', 'courses'];
+        $crumbs[] = ['Nuevo', 'courses/create'];
+
+        //if (Auth::access('super_admin')) {
+            $this->view('courses\create', [
+                'crumbs' => $crumbs,
+                'errors' => $errors,
+                'rows' => $personas
+            ]);
+        //} else {
+           // $this->view('access-denied');
+        //}
+    }
 }

@@ -33,13 +33,18 @@
                     </li>
 					<li>
                      
-                    <a href="<?=ROOT?>/courses"><i class="fa fa-uniF07C "></i>Cursos</a>
+                    <a href="<?=ROOT?>/courses"><i class="fa fa-uniF07C "></i>Asignaturas</a>
 
                     </li>
 					
 					<li>
                         <a href="<?=ROOT?>/students"><i class="fa fa-uniF0C0 "></i>Estudiantes</a>
                     </li>
+
+                    <li>
+                        <a href="<?=ROOT?>/students"><i class="fa fa-uniF007 "></i>Docentes</a>
+                    </li>
+
 					<li>
                         <a href="fees.php"><i class="fa fa-uniF19D "></i>Matricula</a>
                     </li>

@@ -7,4 +7,4 @@ define('DBNAME', 'sisweb2022');
 define('DBHOST', 'localhost');
 define('DBUSER', 'root');
 define('DBPASS', 'Nova|43886031%25');
-define('DBDRIVER', 'mysql');
+define('DBDRIVER', '');

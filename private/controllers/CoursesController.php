@@ -91,7 +91,7 @@ class CoursesController extends Controller
         ]);
     }
 
-    public function destroy($column, $id=null)
+    public function destroy($id=null)
     {   
 		// code...
 		//if(!Auth::logged_in())
@@ -104,14 +104,14 @@ class CoursesController extends Controller
 
 		//if(count($_POST) > 0 && Auth::access('super_admin'))
  		//{
-            $course->delete('Id_Curso', $id);
- 			$this->redirect('courses');
+            //$course->delete('Id_Curso', $id);
+ 			//$this->redirect('courses');
   		//}
 
  		$row = $course->where('Id_Curso',$id);
  		$crumbs[] = ['Principal',''];
 		$crumbs[] = ['Asignaturas','courses'];
-		$crumbs[] = ['Delete','courses/destroy'];
+		$crumbs[] = ['Eliminar','courses'];
 
 		//if(Auth::access('super_admin')){
 			$this->view('courses\delete',[

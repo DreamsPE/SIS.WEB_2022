@@ -1,20 +1,21 @@
 <?php
 $this->view('includes/header')
 ?> 
-<div class="container-fluid p-4 shadow mx-auto" style="max-width: 1000px;">
+<div class="container-fluid p-4 shadow mx-auto" style="max-width: 580px;">
 	<?php $this->view('includes/crumbs', ['crumbs' => $crumbs]) ?>
-
+    <h1 class="page-head-line"></h1>
+	<br>
 	<?php if ($row) : ?>
 		<div class="card-group justify-content-center">
 			<form method="post">
-				<h3>Estas seguro de eliminar el registro?!</h3>
+				<h6>Estas seguro de <strong>eliminar</strong> el registro?</h6>
 				<input type="hidden" value=<?=$row[0]->Id_Curso?> name="hidden">
-				<input disabled autofocus class="form-control" value="<?= get_var('numeracion', $row[0]->numeracion) ?>" type="text" name="numeracion"><br><br>
+				<input disabled autofocus class="form-control" value="<?= get_var('nombreCurso', $row[0]->nombreCurso) ?>" type="text" name="numeracion"><br><br>
 
-				<input class="btn btn-danger float-end" type="submit" value="Eliminar">
+				<input style="font-size: 11px"  class="btn btn-danger float-end" type="submit" value="ELIMINAR">
 
-				<a href="<?= ROOT ?>/inmuebles">
-					<input class="btn btn-success" type="button" value="Cancelar">
+				<a href="<?= ROOT ?>/courses">
+					<input style="font-size: 11px" class="btn btn-success" type="button" value="CANCELAR">
 				</a>
 			</form>
 
@@ -22,16 +23,15 @@ $this->view('includes/header')
 	<?php else : ?>
 
 		<div style="text-align: center;">
-			<h3>No se encuentra el Condominio</h3>
 			<div class="clearfix"></div>
 			<br><br>
-			<a href="<?= ROOT ?>/inmuebles">
+			<a href="<?= ROOT ?>/courses">
 				<input class="btn btn-danger" type="button" value="Cancel">
 			</a>
 		</div>
 	<?php endif; ?>
+    <h1 style="font-size: 10px" class="page-subhead-line">Seleccione <strong>eliminar</strong> para completar el proceso o <strong>regresar</strong> para volver a la pagina anterior.</h1>
 </div>
-
 <?php
 $this->view('includes/footer')
 ?>

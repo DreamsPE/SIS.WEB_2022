@@ -167,10 +167,9 @@ class Model extends Database
 		return $this->query($query, $data);
 	}
 
-	public function delete($id)
+	public function delete($condition, $id)
 	{
-
-		$query = "delete from $this->table where id = :id";
+		$query = "delete from $this->table where $condition = :id";
 		$data['id'] = $id;
 		return $this->query($query, $data);
 	}

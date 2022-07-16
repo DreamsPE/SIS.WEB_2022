@@ -42,7 +42,7 @@
                     </li>
 
                     <li>
-                        <a href="<?=ROOT?>/students"><i class="fa fa-uniF007 "></i>Docentes</a>
+                        <a href="<?=ROOT?>/teachers"><i class="fa fa-uniF007 "></i>Docentes</a>
                     </li>
 
 					<li>

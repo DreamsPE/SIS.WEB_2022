@@ -4,7 +4,7 @@ $this->view('includes/header')
 <div class="container-fluid p-4 shadow mx-auto" style="max-width: 1200px;">
 <?php $this->view('includes/crumbs', ['crumbs' => $crumbs]) ?>
 <div class="col-md-12">
-<a style="font-size: 11px" href="<?=ROOT?>/students/create" class="btn btn-danger btn-sm pull-right"><i class=""></i> AGREGAR </a>
+<a style="font-size: 11px" href="<?=ROOT?>/teachers/create" class="btn btn-danger btn-sm pull-right"><i class=""></i> AGREGAR </a>
 <h1 class="page-head-line"></h1>
 <br>
 <link href="./assets/css/datatable/datatable.css" rel="stylesheet" />
@@ -19,9 +19,11 @@ $this->view('includes/header')
                          <thead>
                              <tr>
                                  <th>#</th>
-                                 <th>Id_Curso</th>
-                                 <th>NombreCurso</th>
-                                 <th>Detalle</th>
+                                 <th>Id_Profesor</th>
+                                 <th>NombreProfesor</th>
+                                 <th>ApellidoProfesor</th>
+                                 <th>TelefonoProfesor</th>
+                                 <th>DireccionProfesor</th>
                                  <th>Acción</th>
                              </tr>
                          </thead>
@@ -39,11 +41,11 @@ $this->view('includes/header')
                                     <td><?= $row->Detalle?></td>
                    
                                     <td>
-                                        <a href="<?= ROOT ?>/students/edit/<?= $row->Id_Curso ?>">
+                                        <a href="<?= ROOT ?>/teachers/edit/<?= $row->Id_Curso ?>">
                                             <button class="btn btn-success btn-xs"><i class="fa fa-uniF044 fa-lg"></i> </button>
                                         </a>
                                         
-                                        <a href="<?= ROOT ?>/students/destroy/<?= $row->Id_Curso ?>">
+                                        <a href="<?= ROOT ?>/teachers/destroy/<?= $row->Id_Curso ?>">
                                             <button class="btn btn-danger btn-xs"><i class="fa fa-bin fa-lg"></i> </button>
                                         </a>
                                     </td>
@@ -56,7 +58,7 @@ $this->view('includes/header')
                  </div>
              </div>
         </div>
-        <h1 style="font-size: 10px" class="page-subhead-line">Información de <strong>asignaturas</strong> registradas. </h1>
+        <h1 style="font-size: 10px" class="page-subhead-line">Información de <strong>docentes</strong> registrados. </h1>
 <script src="./assets/js/dataTable/jquery.dataTables.min.js"></script>
 <script>
 $(document).ready(function () {

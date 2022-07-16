@@ -134,7 +134,7 @@ class CoursesController extends Controller
 
 
         $query = "select * from grado";
-        $personas = $course->query($query);
+        $courses = $course->query($query);
 
         $errors =  array();
         $crumbs[] = ['Dashboard', ''];
@@ -144,7 +144,7 @@ class CoursesController extends Controller
         //if (Auth::access('super_admin')) {
             $this->view('courses\edit', [
                 'rows' => $data,
-                'personas' => $personas,
+                'courses' => $courses,
                 'crumbs' => $crumbs,
                 'errors' => $errors,
             ]);
@@ -152,4 +152,34 @@ class CoursesController extends Controller
         //    $this->view('access-denied');
         //}
     }
+
+    public function update($id = null)
+    {
+        //if (!Auth::logged_in()) {
+        //    $this->redirect('login');
+        //}
+
+        $errors = array();
+        if (count($_POST) > 0 /*&& Auth::access('super_admin')*/) {
+            $course = new Course();
+            if ($course->validate($_POST)) {
+                $course->update('Id_Curso',$id, $_POST);
+
+                //if (isset($_POST['persona_id']) && is_numeric($_POST['persona_id'])) {
+                //    $propietario['inmueble_id'] =  $id;
+                //    $propietario['persona_id'] =  $_POST['persona_id'];
+                //
+                //    if (!$inmueble->upd_propietario($propietario)) {
+                //        $inmueble->set_propietario($propietario);
+                //    }
+                //}
+                $this->redirect('courses');
+            } else {
+                $errors = $course->errors;
+            }
+        }
+
+        $this->redirect('courses');
+    }
+
 }

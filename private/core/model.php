@@ -133,7 +133,7 @@ class Model extends Database
 		return $this->query($query, $data);
 	}
 
-	public function update($id, $data)
+	public function update($condition, $id, $data)
 	{
 
 
@@ -162,8 +162,7 @@ class Model extends Database
 		$str = trim($str, ",");
 
 		$data['id'] = $id;
-		$query = "update $this->table set $str where id = :id";
-
+		$query = "update $this->table set $str where $condition = :id";
 		return $this->query($query, $data);
 	}
 

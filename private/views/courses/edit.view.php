@@ -5,7 +5,7 @@ $this->view('includes/header')
 	<?php $this->view('includes/crumbs', ['crumbs' => $crumbs]) ?>
 
 	<div class="col-md-12">
-	<a style="font-size: 11px" href="<?=ROOT?>/courses/index" class="btn btn-danger btn-sm pull-right"><i class=""></i> REGRESAR </a>
+	<a style="font-size: 11px" href="<?=ROOT?>/courses" class="btn btn-danger btn-sm pull-right"><i class=""></i> REGRESAR </a>
     <h1 class="page-head-line"></h1>
 	<br>
 	<form action="<?= ROOT ?>/courses/update/<?= $rows->Id_Curso ?>" method="POST">
@@ -77,6 +77,8 @@ $this->view('includes/header')
 		
 		<h1 style="font-size: 10px" class="page-subhead-line">Seleccione <strong>guardar</strong> para completar el registro o <strong>regresar</strong> para volver a la pagina anterior.</h1>
 	</form>
+</div>
+</div>
 </div>
 </div>
 <?php

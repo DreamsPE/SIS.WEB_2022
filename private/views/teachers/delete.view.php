@@ -9,12 +9,12 @@ $this->view('includes/header')
 		<div class="card-group justify-content-center">
 			<form method="post">
 				<h6>Estas seguro de <strong>eliminar</strong> el registro?</h6>
-				<input type="hidden" value=<?=$row[0]->Id_Curso?> name="hidden">
-				<input disabled autofocus class="form-control" value="<?= get_var('nombreCurso', $row[0]->nombreCurso) ?>" type="text" name="numeracion"><br><br>
+				<input type="hidden" value=<?=$row[0]->Id_Profesor?> name="hidden">
+				<input disabled autofocus class="form-control" value="<?= get_var('nombreCurso', $row[0]->NombreProfesor ." ". $row[0]->ApellidoProfesor) ?>" type="text" name="numeracion"><br><br>
 
 				<input style="font-size: 11px" class="btn btn-danger float-end" type="submit" value="ELIMINAR">
 
-				<a href="<?= ROOT ?>/courses">
+				<a href="<?= ROOT ?>/teachers">
 					<input style="font-size: 11px" class="btn btn-success" type="button" value="CANCELAR">
 				</a>
 			</form>
@@ -31,6 +31,7 @@ $this->view('includes/header')
 		</div>
 	<?php endif; ?>
     <h1 style="font-size: 10px" class="page-subhead-line">Seleccione <strong>eliminar</strong> para completar el proceso o <strong>regresar</strong> para volver a la pagina anterior.</h1>
+</div>
 </div>
 <?php
 $this->view('includes/footer')

@@ -57,7 +57,8 @@ $this->view('includes/header')
              </div>
         </div>
         <h1 style="font-size: 10px" class="page-subhead-line">Información de <strong>estudiantes</strong> registrados. </h1>
-<script src="./assets/js/dataTable/jquery.dataTables.min.js"></script>
+        </div>
+        <script src="./assets/js/dataTable/jquery.dataTables.min.js"></script>
 <script>
 $(document).ready(function () {
   $('#tSortable22').dataTable({

@@ -29,37 +29,37 @@
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
                     <li>
-                    <a class="active-menu" href="index.php"><i class="fa fa-uniF17A"></i>Principal</a>
+                    <a class="active-menu" href="index.php"><i class="fa fa-uniF17A"></i>PRINCIPAL</a>
                     </li>
 					<li>
                      
-                    <a href="<?=ROOT?>/courses"><i class="fa fa-uniF07C "></i>Asignaturas</a>
+                    <a href="<?=ROOT?>/courses"><i class="fa fa-uniF07C "></i>ASIGNATURAS</a>
 
                     </li>
 					
 					<li>
-                        <a href="<?=ROOT?>/students"><i class="fa fa-uniF0C0 "></i>Estudiantes</a>
+                        <a href="<?=ROOT?>/students"><i class="fa fa-uniF0C0 "></i>ESTUDIANTES</a>
                     </li>
 
                     <li>
-                        <a href="<?=ROOT?>/teachers"><i class="fa fa-uniF007 "></i>Docentes</a>
+                        <a href="<?=ROOT?>/teachers"><i class="fa fa-uniF007 "></i>DOCENTES</a>
                     </li>
 
 					<li>
-                        <a href="fees.php"><i class="fa fa-uniF19D "></i>Matricula</a>
+                        <a href="fees.php"><i class="fa fa-uniF19D "></i>MATRICULA</a>
                     </li>
 					 <li>
-                        <a href="report.php"><i class="fa fa-uniF15C "></i>Reportes</a>
+                        <a href="report.php"><i class="fa fa-uniF15C "></i>REPORTES</a>
                     </li>
 					
 					 
 					
 					<li>
-                        <a href="setting.php"><i class="fa fa-uniF085 "></i>Configuracion</a>
+                        <a href="setting.php"><i class="fa fa-uniF085 "></i>CONFIGURACION</a>
                     </li>
 					
 					 <li>
-                        <a href="logout.php"><i class="fa fa-uniF011 "></i>Salir</a>
+                        <a href="logout.php"><i class="fa fa-uniF011 "></i>SALIR</a>
                     </li>
 					
 			

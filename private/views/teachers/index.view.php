@@ -10,7 +10,7 @@ $this->view('includes/header')
 <link href="./assets/css/datatable/datatable.css" rel="stylesheet" />
          <div class="panel panel-default">
              <div class="panel-heading">
-                 Administrar Estudiantes:  
+                 Administrar Docentes:  
              </div>
              <div class="panel-body">
                   <div class="table-sorting table-responsive">
@@ -32,20 +32,22 @@ $this->view('includes/header')
                             <?php foreach ($rows as $row) : ?>
                                 <tr>
                                     <td>
-                                        <a href="<?= ROOT ?>#<?= $row->Id_Curso ?>">
+                                        <a href="<?= ROOT ?>#<?= $row->Id_Profesor ?>">
                                             <button class="btn btn-info btn-xs"><i class="fa fa-uniF08B fa-lg"></i> Rev. </button>
                                         </a>
                                     </td>
-                                    <td><?= $row->Id_Curso ?></td>
-                                    <td><?= $row->nombreCurso ?></td>
-                                    <td><?= $row->Detalle?></td>
+                                    <td><?= $row->Id_Profesor ?></td>
+                                    <td><?= $row->NombreProfesor ?></td>
+                                    <td><?= $row->ApellidoProfesor?></td>
+                                    <td><?= $row->TelefonoProfesor?></td>
+                                    <td><?= $row->DireccionProfesor?></td>
                    
                                     <td>
-                                        <a href="<?= ROOT ?>/teachers/edit/<?= $row->Id_Curso ?>">
+                                        <a href="<?= ROOT ?>/teachers/edit/<?= $row->Id_Profesor ?>">
                                             <button class="btn btn-success btn-xs"><i class="fa fa-uniF044 fa-lg"></i> </button>
                                         </a>
                                         
-                                        <a href="<?= ROOT ?>/teachers/destroy/<?= $row->Id_Curso ?>">
+                                        <a href="<?= ROOT ?>/teachers/destroy/<?= $row->Id_Profesor ?>">
                                             <button class="btn btn-danger btn-xs"><i class="fa fa-bin fa-lg"></i> </button>
                                         </a>
                                     </td>
@@ -59,7 +61,8 @@ $this->view('includes/header')
              </div>
         </div>
         <h1 style="font-size: 10px" class="page-subhead-line">Información de <strong>docentes</strong> registrados. </h1>
-<script src="./assets/js/dataTable/jquery.dataTables.min.js"></script>
+        </div>
+        <script src="./assets/js/dataTable/jquery.dataTables.min.js"></script>
 <script>
 $(document).ready(function () {
   $('#tSortable22').dataTable({

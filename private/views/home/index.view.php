@@ -1,8 +1,10 @@
 <?php
 $this->view('includes/header')
 ?>
+                    
+<div class="container-fluid p-4 shadow mx-auto" style="max-width: 1250px;">
                     <div class="col-md-12">
-                        <h1 class="page-head-line">Home</h1>
+                        <h1 class="page-head-line">PRINCIPAL</h1>
                         <h1 class="page-subhead-line">Bienvenido: <strong>I.E.P. "GRAN AMAUTA DE MOTUPE" [En Linea]</strong>. </h1>
 
                     </div>
@@ -38,7 +40,7 @@ $this->view('includes/header')
                     </div>
                   
 
-                </div>
+                    </div>
                 <!-- /. ROW  -->
 <?php
 $this->view('includes/footer')

@@ -32,6 +32,7 @@ $this->view('includes/header')
 	<?php endif; ?>
     <h1 style="font-size: 10px" class="page-subhead-line">Seleccione <strong>eliminar</strong> para completar el proceso o <strong>regresar</strong> para volver a la pagina anterior.</h1>
 </div>
+</div>
 <?php
 $this->view('includes/footer')
 ?>

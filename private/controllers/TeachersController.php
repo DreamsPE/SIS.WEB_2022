@@ -1,5 +1,5 @@
 <?php
-class CoursesController extends Controller
+class TeachersController extends Controller
 {
     
 	public function index()
@@ -15,14 +15,14 @@ class CoursesController extends Controller
         //    $this->redirect('login');
         //}
 
-        $course =  new Course();
+        $teacher =  new Teacher();
 
-        $data = $course->findAll();
+        $data = $teacher->findAll();
 
         $crumbs[] = ['Principal', ''];
-        $crumbs[] = ['Asignaturas', 'courses'];
+        $crumbs[] = ['Docentes', 'teachers'];
 
-        $this->view('courses\index', [
+        $this->view('teachers\index', [
             'rows' => $data,
             'crumbs' => $crumbs
         ]);
@@ -37,17 +37,16 @@ class CoursesController extends Controller
         //if (!Auth::logged_in()) {
         //    $this->redirect('login');
         //}
-        $query = "select * from grado";
-        $course =  new Course();
-        $data = $course->query($query);
+        $teacher =  new Teacher();
+        $data = $teacher->findAll();
 
         $errors =  array();
         $crumbs[] = ['Principal', ''];
-        $crumbs[] = ['Asignaturas', 'courses'];
-        $crumbs[] = ['Nuevo', 'courses/create'];
+        $crumbs[] = ['Docentes', 'teachers'];
+        $crumbs[] = ['Nuevo', 'teachers/create'];
 
         //if (Auth::access('super_admin')) {
-            $this->view('courses\create', [
+            $this->view('teachers\create', [
                 'crumbs' => $crumbs,
                 'errors' => $errors,
                 'rows' => $data
@@ -64,27 +63,25 @@ class CoursesController extends Controller
         //}
 
         $errors = array();
-        //if (count($_POST) > 0 && Auth::access('super_admin')) {
-            $curso = new Course();
+        if (count($_POST) > 0 /*&& Auth::access('super_admin')*/) {
+            $teacher =  new Teacher();
 
-            if ($curso->validate($_POST)) {
-                $curso->insert($_POST);
+            if ($teacher->validate($_POST)) {
+                $teacher->insert($_POST);
                 
-                $this->redirect('courses');
+                $this->redirect('teachers');
             } else {
-                $errors = $curso->errors;
+                $errors = $teacher->errors;
             }
-        //}
+        }
 
-        $query = "select * from grado";
-        $course =  new Course();
-        $data = $course->query($query);
+		$data = $teacher->findAll();
 
         $crumbs[] = ['Principal', ''];
-        $crumbs[] = ['Asignaturas', 'courses'];
-        $crumbs[] = ['Nuevo', 'courses/create'];
+        $crumbs[] = ['Docente', 'teachers'];
+        $crumbs[] = ['Nuevo', 'teachers/create'];
 
-        $this->view('courses\create', [
+        $this->view('teachers\create', [
             'crumbs' => $crumbs,
             'errors' => $errors,
             'rows' => $data
@@ -99,22 +96,22 @@ class CoursesController extends Controller
 		//	$this->redirect('login');
 		//}
        
-		$course = new Course();
+		$teacher = new Teacher();
 		$errors = array();
 
 		if(count($_POST) > 0 /*&& Auth::access('super_admin')*/)
  		{
-            $course->delete('Id_Curso', $id);
- 			$this->redirect('courses');
+            $teacher->delete('Id_Profesor', $id);
+ 			$this->redirect('teachers');
   		}
 
- 		$row = $course->where('Id_Curso',$id);
+ 		$row = $teacher->where('Id_Profesor',$id);
  		$crumbs[] = ['Principal',''];
-		$crumbs[] = ['Asignaturas','courses'];
-		$crumbs[] = ['Eliminar','courses'];
+		$crumbs[] = ['Docentes','teachers'];
+		$crumbs[] = ['Eliminar','teachers'];
 
 		//if(Auth::access('super_admin')){
-			$this->view('courses\delete',[
+			$this->view('teachers\delete',[
 				'row'=>$row,
 	 			'crumbs'=>$crumbs,
 			]);
@@ -129,22 +126,17 @@ class CoursesController extends Controller
         //    $this->redirect('login');
         //}
 
-        $course = new Course();
-        $data = $course->findById('Id_Curso', $id);
-
-
-        $query = "select * from grado";
-        $courses = $course->query($query);
+        $teacher = new Teacher();
+        $data = $teacher->findById('Id_Profesor', $id);
 
         $errors =  array();
         $crumbs[] = ['Dashboard', ''];
-        $crumbs[] = ['Asignaturas', 'courses'];
-        $crumbs[] = ['Modificar', 'courses'];
+        $crumbs[] = ['Docentes', 'teachers'];
+        $crumbs[] = ['Modificar', 'teachers'];
 
         //if (Auth::access('super_admin')) {
-            $this->view('courses\edit', [
+            $this->view('teachers\edit', [
                 'rows' => $data,
-                'courses' => $courses,
                 'crumbs' => $crumbs,
                 'errors' => $errors,
             ]);
@@ -161,9 +153,9 @@ class CoursesController extends Controller
 
         $errors = array();
         if (count($_POST) > 0 /*&& Auth::access('super_admin')*/) {
-            $course = new Course();
-            if ($course->validate($_POST)) {
-                $course->update('Id_Curso',$id, $_POST);
+            $teacher = new Teacher();
+            if ($teacher->validate($_POST)) {
+                $teacher->update('Id_Profesor',$id, $_POST);
 
                 //if (isset($_POST['persona_id']) && is_numeric($_POST['persona_id'])) {
                 //    $propietario['inmueble_id'] =  $id;
@@ -173,13 +165,13 @@ class CoursesController extends Controller
                 //        $inmueble->set_propietario($propietario);
                 //    }
                 //}
-                $this->redirect('courses');
+                $this->redirect('teachers');
             } else {
-                $errors = $course->errors;
+                $errors = $teacher->errors;
             }
         }
 
-        $this->redirect('courses');
+        $this->redirect('teachers');
     }
 
 }

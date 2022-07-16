@@ -57,6 +57,7 @@ $this->view('includes/header')
              </div>
         </div>
         <h1 style="font-size: 10px" class="page-subhead-line">Información de <strong>asignaturas</strong> registradas. </h1>
+</div>
 <script src="./assets/js/dataTable/jquery.dataTables.min.js"></script>
 <script>
 $(document).ready(function () {

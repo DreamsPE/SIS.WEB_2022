@@ -79,6 +79,7 @@ $this->view('includes/header')
 	</form>
 </div>
 </div>
+</div>
 <?php
 $this->view('includes/footer')
 ?>

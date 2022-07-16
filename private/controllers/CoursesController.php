@@ -32,12 +32,14 @@ class CoursesController extends Controller
 
 	public function create()
     {
-        //if (!Auth::logged_in()) {
-          //  $this->redirect('login');
-        //}
 
-        $course =  new Course;
-        $data  = $course->findAll();
+//
+        //if (!Auth::logged_in()) {
+        //    $this->redirect('login');
+        //}
+        $query = "select * from grado";
+        $course =  new Course();
+        $data = $course->query($query);
 
         $errors =  array();
         $crumbs[] = ['Principal', ''];
@@ -51,7 +53,7 @@ class CoursesController extends Controller
                 'rows' => $data
             ]);
         //} else {
-           // $this->view('access-denied');
+        //    $this->view('access-denied');
         //}
     }
 
@@ -63,24 +65,36 @@ class CoursesController extends Controller
 
         $errors = array();
         //if (count($_POST) > 0 && Auth::access('super_admin')) {
-            $course = new Course();
-            
-            if ($course->validate($_POST)) {
-                $_POST['date'] = date("Y-m-d H:i:s");
-                
-                $course->insert($_POST);
-                $this->redirect('condominios');
+            $inmueble = new Course();
+
+            if ($inmueble->validate($_POST)) {
+                $propietario['Id_Curso'] = $inmueble->insert($_POST);
+
+                if (isset($_POST['Id_Grado']) && is_numeric($_POST['Id_Grado'])) {
+                    $propietario['Id_Grado'] =  $_POST['Id_Grado'];
+                    //MODIFICA O VALIDA
+                    $inmueble->set_propietario($propietario);
+                }
+                $this->redirect('courses');
             } else {
-                $errors = $course->errors;
+                $errors = $inmueble->errors;
             }
         //}
-        $crumbs[] = ['Principal', ''];
-        $crumbs[] = ['Asignaturas', 'Courses'];
+
+        //$persona =  new Persona;
+        //$personas  = $persona->findAll();
+        $query = "select * from grado";
+        $course =  new Course();
+        $data = $course->query($query);
+
+        $crumbs[] = ['Dashboard', ''];
+        $crumbs[] = ['Asignaturas', 'courses'];
         $crumbs[] = ['Nuevo', 'courses/create'];
 
-        $this->view('condominios\create', [
+        $this->view('courses\create', [
             'crumbs' => $crumbs,
-            'errors' => $errors
+            'errors' => $errors,
+            'rows' => $data,
         ]);
     }
 }

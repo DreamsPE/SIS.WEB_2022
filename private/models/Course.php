@@ -14,7 +14,7 @@ class Course extends Model{
     ];
 
     protected $afterSelect = [
-      
+        'get_gradseccion',
     ];
 
     public function validate($DATA)
@@ -38,13 +38,12 @@ class Course extends Model{
 
     public function get_gradseccion($data)
     {
-        $persona  = new Persona();
+        $grades  = new Course();
         foreach ($data as $key => $row) {
                         
-            $query = "select * from personas pe inner join propietarios pr on pe.id = pr.persona_id
-            where pr.inmueble_id = :inmueble_id";
-            $result=$persona->query($query,['inmueble_id' => $row->id]);
-            $data[$key]->lucas = is_array($result) ? $result[0] : false;
+            $query = "select * from grado where Id_Grado = :Id_Grado";
+            $result=$grades->query($query,['Id_Grado' => $row->Id_Grado]);
+            $data[$key]->get_grades = is_array($result) ? $result[0] : false;
         }
         return $data;
     }

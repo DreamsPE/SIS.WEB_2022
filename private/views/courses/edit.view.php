@@ -49,19 +49,21 @@ $this->view('includes/header')
 
 					<?php if (count($personas) > 0) : ?>
 					<div class="form-group col-md-6">
-						<label for="grado">Grado / Sección:</label>
-						<select id="grado" class="form-control" name="Id_Curso">
-						        <option <?= get_select('Id_Curso', $rows->Grado ??$rows->Seccion) ?> value="<?= $rows->Grado ? $rows->Seccion : '' ?>">
-								<?php if ($rows->grado):?>
-									<?= ucwords($rows->Grado) ?> <?= ucwords($rows->Seccion) ?>
+						<label for="get_grades">Grado / Sección:</label>
+						<select id="get_grades" class="form-control" name="Id_Curso">
+
+						        <option <?= get_select('Id_Curso', $rows->get_grades ??$rows->get_grades->Id_Curso) ?> value="<?= $rows->get_grades ? $rows->get_grades->Id_Curso : '' ?>">
+								<?php if ($rows->get_grades):?>
+									<?= ucwords($rows->get_grades->Grado) ?> <?= ucwords($rows->get_grades->Seccion) ?>
 								<?php else:?>	
 									---Selecionar---
 								<?php endif;?>
 								</option>
 
-                                <?php foreach ($personas as $key => $persona) :?>
-                                <option value="<?=$persona->Id_Grado?>"><?=$persona->Grado?> <?=$persona->Seccion?></option>
-                                <?php endforeach?>
+                            <?php foreach ($personas as $key => $persona) :?>
+                            <option value="<?=$persona->Id_Grado?>"><?=$persona->Grado?> <?=$persona->Seccion?></option>
+                            <?php endforeach?>
+							
 						</select>
 
 					</div>

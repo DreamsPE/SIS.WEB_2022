@@ -12,7 +12,7 @@ $this->view('includes/header')
 				<input type="hidden" value=<?=$row[0]->Id_Curso?> name="hidden">
 				<input disabled autofocus class="form-control" value="<?= get_var('nombreCurso', $row[0]->nombreCurso) ?>" type="text" name="numeracion"><br><br>
 
-				<input style="font-size: 11px"  class="btn btn-danger float-end" type="submit" value="ELIMINAR">
+				<input style="font-size: 11px" class="btn btn-danger float-end" type="submit" value="ELIMINAR">
 
 				<a href="<?= ROOT ?>/courses">
 					<input style="font-size: 11px" class="btn btn-success" type="button" value="CANCELAR">

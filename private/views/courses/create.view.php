@@ -3,6 +3,7 @@ $this->view('includes/header')
 ?>          
 <div class="container-fluid p-4 shadow mx-auto" style="max-width: 1000px;">
 	<?php $this->view('includes/crumbs', ['crumbs' => $crumbs]) ?>
+
 	<div class="col-md-12">
 	<a style="font-size: 11px" href="<?=ROOT?>/courses/index" class="btn btn-danger btn-sm pull-right"><i class=""></i> REGRESAR </a>
     <h1 class="page-head-line"></h1>
@@ -61,6 +62,8 @@ $this->view('includes/header')
 						<label for="Detalle">Descripcion:</label>
 						<textarea class="form-control" id="Detalle" name="Detalle"></textarea>
 				</div>
+			
+				
 				<button style="font-size: 11px" class="btn btn-info btn-sm">GUARDAR</button>
 			</div>
 		</div>

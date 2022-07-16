@@ -102,11 +102,11 @@ class CoursesController extends Controller
 		$course = new Course();
 		$errors = array();
 
-		//if(count($_POST) > 0 && Auth::access('super_admin'))
- 		//{
-            //$course->delete('Id_Curso', $id);
- 			//$this->redirect('courses');
-  		//}
+		if(count($_POST) > 0 /*&& Auth::access('super_admin')*/)
+ 		{
+            $course->delete('Id_Curso', $id);
+ 			$this->redirect('courses');
+  		}
 
  		$row = $course->where('Id_Curso',$id);
  		$crumbs[] = ['Principal',''];
@@ -123,4 +123,33 @@ class CoursesController extends Controller
 		//}
 	}
 
+    public function edit($id = null)
+    {
+        //if (!Auth::logged_in()) {
+        //    $this->redirect('login');
+        //}
+
+        $course = new Course();
+        $data = $course->findById('Id_Curso', $id);
+
+
+        $query = "select * from grado";
+        $personas = $course->query($query);
+
+        $errors =  array();
+        $crumbs[] = ['Dashboard', ''];
+        $crumbs[] = ['Asignaturas', 'courses'];
+        $crumbs[] = ['Modificar', 'courses/edit'];
+
+        //if (Auth::access('super_admin')) {
+            $this->view('courses\edit', [
+                'rows' => $data,
+                'personas' => $personas,
+                'crumbs' => $crumbs,
+                'errors' => $errors,
+            ]);
+        //} else {
+        //    $this->view('access-denied');
+        //}
+    }
 }

@@ -79,10 +79,10 @@ class Model extends Database
 		return $data;
 	}
 
-	public function findById($id)
+	public function findById($column, $id)
 	{
 
-		$query = "select * from $this->table where id = :value";
+		$query = "select * from $this->table where $column = :value";
 		$data = $this->query($query, [
 			'value' => $id
 		]);

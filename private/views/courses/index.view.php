@@ -2,13 +2,12 @@
 $this->view('includes/header')
 ?>
 <?php $this->view('includes/crumbs', ['crumbs' => $crumbs]) ?>
+<div class="container-fluid p-4 shadow mx-auto" style="max-width: 1200px;">
 <div class="col-md-12">
 <a style="font-size: 11px" href="<?=ROOT?>/courses/create" class="btn btn-danger btn-sm pull-right"><i class=""></i> AGREGAR </a>
 <h1 class="page-head-line"></h1>
 <br>
-
 <link href="./assets/css/datatable/datatable.css" rel="stylesheet" />
-		 
          <div class="panel panel-default">
              <div class="panel-heading">
                  Administrar Asignaturas:  
@@ -19,34 +18,33 @@ $this->view('includes/header')
                      <table class="table table-striped table-bordered table-hover" id="tSortable22">
                          <thead>
                              <tr>
+                                 <th>#</th>
                                  <th>Id_Curso</th>
                                  <th>NombreCurso</th>
                                  <th>Detalle</th>
-                                 <th>Area</th>
                                  <th>Acción</th>
                              </tr>
                          </thead>
                          <tbody>
                          <?php if ($rows) : ?>
                             <?php foreach ($rows as $row) : ?>
-
                                 <tr>
-                                    
+                                    <td>
+                                        <a href="<?= ROOT ?>/courses/destroy/<?= $row->id ?>">
+                                            <button class="btn btn-info btn-xs"><i class="fa fa-uniF08B fa-lg"></i> Rev. </button>
+                                        </a>
+                                    </td>
                                     <td><?= $row->Id_Curso ?></td>
                                     <td><?= $row->nombreCurso ?></td>
                                     <td><?= $row->Detalle?></td>
-                                    <td><?= $row->Area?></td>
+                   
                                     <td>
-                                        <a href="<?= ROOT ?>/condominios/edit/<?= $row->id ?>">
-                                            <button class="btn btn-success btn-xs"><i class="fa fa-uniF044"></i> Modifica </button>
+                                        <a href="<?= ROOT ?>/courses/edit/<?= $row->id ?>">
+                                            <button class="btn btn-success btn-xs"><i class="fa fa-uniF044 fa-lg"></i> </button>
                                         </a>
-
-                                        <a href="<?= ROOT ?>/condominios/destroy/<?= $row->id ?>">
-                                            <button class="btn btn-danger btn-xs"><i class="fa fa-bin"></i> Elimina </button>
-                                        </a>
-
-                                        <a href="<?= ROOT ?>/condominios/destroy/<?= $row->id ?>">
-                                            <button class="btn btn-info btn-xs"><i class="fa fa-uniF08B"></i> Información</button>
+                                        
+                                        <a href="<?= ROOT ?>/courses/destroy/<?= $row->id ?>">
+                                            <button class="btn btn-danger btn-xs"><i class="fa fa-bin fa-lg"></i> </button>
                                         </a>
                                     </td>
                                 </tr>

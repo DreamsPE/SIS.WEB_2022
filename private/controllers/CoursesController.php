@@ -65,24 +65,17 @@ class CoursesController extends Controller
 
         $errors = array();
         //if (count($_POST) > 0 && Auth::access('super_admin')) {
-            $inmueble = new Course();
+            $curso = new Course();
 
-            if ($inmueble->validate($_POST)) {
-                $propietario['Id_Curso'] = $inmueble->insert($_POST);
-
-                if (isset($_POST['Id_Grado']) && is_numeric($_POST['Id_Grado'])) {
-                    $propietario['Id_Grado'] =  $_POST['Id_Grado'];
-                    //MODIFICA O VALIDA
-                    $inmueble->set_propietario($propietario);
-                }
+            if ($curso->validate($_POST)) {
+                $curso->insert($_POST);
+                
                 $this->redirect('courses');
             } else {
-                $errors = $inmueble->errors;
+                $errors = $curso->errors;
             }
         //}
 
-        //$persona =  new Persona;
-        //$personas  = $persona->findAll();
         $query = "select * from grado";
         $course =  new Course();
         $data = $course->query($query);
@@ -97,4 +90,5 @@ class CoursesController extends Controller
             'rows' => $data,
         ]);
     }
+
 }

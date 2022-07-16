@@ -3,8 +3,6 @@ $this->view('includes/header')
 ?>          
 <div class="container-fluid p-4 shadow mx-auto" style="max-width: 1000px;">
 	<?php $this->view('includes/crumbs', ['crumbs' => $crumbs]) ?>
-
-
 	<div class="col-md-12">
 	<a style="font-size: 11px" href="<?=ROOT?>/courses/index" class="btn btn-danger btn-sm pull-right"><i class=""></i> REGRESAR </a>
     <h1 class="page-head-line"></h1>
@@ -32,23 +30,23 @@ $this->view('includes/header')
 
 				<div class="row my-2">
 					<div class="form-group col-md-6">
-						<label for="tipo">Asignaturas:</label>
-						<select id="tipo" class="form-control" name="tipo">
+						<label for="nombreCurso">Asignaturas:</label>
+						<select id="nombreCurso" class="form-control" name="nombreCurso">
 							<option selected> Seleccionar </option>
-							<option value="persoc">Personal Social</option>
-							<option value="edufi">Educación Física</option>
-							<option value="comun">Comunicación</option>
-							<option value="ingl">Inglés</option>
-							<option value="mate">Matemática</option>
-							<option value="cientec">Ciencia Y Tecnología</option>
-							<option value="edurel">Educación Religiosa</option>	
-							<option value="arcul">Arte y cultura</option>
+							<option value="Personal Social">Personal Social</option>
+							<option value="Educación Física">Educación Física</option>
+							<option value="Comunicación">Comunicación</option>
+							<option value="Inglés">Inglés</option>
+							<option value="Matemática">Matemática</option>
+							<option value="Ciencia Y Tecnología">Ciencia Y Tecnología</option>
+							<option value="Educación Religios">Educación Religiosa</option>	
+							<option value="Arte y cultura">Arte y cultura</option>
 						</select>
 					</div>
 					<?php if (count($rows) > 0) : ?>
 					<div class="form-group col-md-6">
-						<label for="gradsec">Grado / Sección:</label>
-						<select id="gradsec" class="form-control" name="Id_Grado">
+						<label for="Id_Grado">Grado / Sección:</label>
+						<select id="Id_Grado" class="form-control" name="Id_Grado">
 							<option selected> Seleccionar </option>
 							<?php foreach ($rows as $key => $row) :?>
 								<option value="<?=$row->Id_Grado?>"><?=$row->Grado?> <?=$row->Seccion?></option>
@@ -59,19 +57,15 @@ $this->view('includes/header')
 					</div>
 					<?php endif?>
 				</div>
-
-				
-				
-
 				<div class="row my-2">
 					<div class="form-group col-md-6">
-						<label for="area">Id_Curso:</label>
-						<input readonly="readonly" class="form-control" value= "" type="number" id="area" name="area" step="0.01">
+						<label for="Id_Curso">Id_Curso:</label>
+						<input class="form-control" value= "TTT45"  id="Id_Curso" name="Id_Curso">
 					</div>
 				</div>
 				<div class="form-group">
-						<label for="description">Descripcion:</label>
-						<textarea class="form-control" id="description" name="description"><?=get_var('description')?></textarea>
+						<label for="Detalle">Descripcion:</label>
+						<textarea class="form-control" id="Detalle" name="Detalle"></textarea>
 				</div>
 				<button style="font-size: 11px" class="btn btn-info btn-sm">GUARDAR</button>
 			</div>
@@ -81,7 +75,6 @@ $this->view('includes/header')
 	</form>
 </div>
 </div>
-
 <?php
 $this->view('includes/footer')
 ?>

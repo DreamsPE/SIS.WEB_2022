@@ -7,7 +7,6 @@ class Course extends Model{
         'Id_Grado',
         'nombreCurso',
         'Detalle',
-        'Area',
     ];
 
     protected $beforeInsert = [
@@ -23,10 +22,10 @@ class Course extends Model{
         $this->errors = array();
 
         //verificamos el nombre
-        if(empty($DATA['nombreCurso']) || !preg_match('/^[a-zA-Z0-9 ]+$/', $DATA['nombreCurso']))
-        {
-            $this->errors['nombreCurso'] = "Only letters & spaces allowed in nombreCurso";
-        }
+        //if(empty($DATA['nombreCurso']) || !preg_match('/^[a-zA-Z0-9 ]+$/', $DATA['nombreCurso']))
+        //{
+        //    $this->errors['nombreCurso'] = "Only letters & spaces allowed in nombreCurso";
+        //}
 
 
         if(count($this->errors) == 0)
@@ -36,6 +35,5 @@ class Course extends Model{
 
         return false;
     }
-    
 }
 ?>

@@ -1,8 +1,8 @@
 <?php
 $this->view('includes/header')
 ?>
-<?php $this->view('includes/crumbs', ['crumbs' => $crumbs]) ?>
 <div class="container-fluid p-4 shadow mx-auto" style="max-width: 1200px;">
+<?php $this->view('includes/crumbs', ['crumbs' => $crumbs]) ?>
 <div class="col-md-12">
 <a style="font-size: 11px" href="<?=ROOT?>/courses/create" class="btn btn-danger btn-sm pull-right"><i class=""></i> AGREGAR </a>
 <h1 class="page-head-line"></h1>
@@ -30,7 +30,7 @@ $this->view('includes/header')
                             <?php foreach ($rows as $row) : ?>
                                 <tr>
                                     <td>
-                                        <a href="<?= ROOT ?>/courses/destroy/<?= $row->id ?>">
+                                        <a href="<?= ROOT ?>#<?= $row->Id_Curso ?>">
                                             <button class="btn btn-info btn-xs"><i class="fa fa-uniF08B fa-lg"></i> Rev. </button>
                                         </a>
                                     </td>
@@ -39,11 +39,11 @@ $this->view('includes/header')
                                     <td><?= $row->Detalle?></td>
                    
                                     <td>
-                                        <a href="<?= ROOT ?>/courses/edit/<?= $row->id ?>">
+                                        <a href="<?= ROOT ?>/courses/edit/<?= $row->Id_Curso ?>">
                                             <button class="btn btn-success btn-xs"><i class="fa fa-uniF044 fa-lg"></i> </button>
                                         </a>
                                         
-                                        <a href="<?= ROOT ?>/courses/destroy/<?= $row->id ?>">
+                                        <a href="<?= ROOT ?>/courses/destroy/<?= $row->Id_Curso ?>">
                                             <button class="btn btn-danger btn-xs"><i class="fa fa-bin fa-lg"></i> </button>
                                         </a>
                                     </td>

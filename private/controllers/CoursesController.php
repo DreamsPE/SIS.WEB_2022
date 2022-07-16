@@ -80,7 +80,7 @@ class CoursesController extends Controller
         $course =  new Course();
         $data = $course->query($query);
 
-        $crumbs[] = ['Dashboard', ''];
+        $crumbs[] = ['Principal', ''];
         $crumbs[] = ['Asignaturas', 'courses'];
         $crumbs[] = ['Nuevo', 'courses/create'];
 
@@ -90,5 +90,37 @@ class CoursesController extends Controller
             'rows' => $data,
         ]);
     }
+
+    public function destroy($column, $id=null)
+    {   
+		// code...
+		//if(!Auth::logged_in())
+		//{
+		//	$this->redirect('login');
+		//}
+       
+		$course = new Course();
+		$errors = array();
+
+		//if(count($_POST) > 0 && Auth::access('super_admin'))
+ 		//{
+            $course->delete('Id_Curso', $id);
+ 			$this->redirect('courses');
+  		//}
+
+ 		$row = $course->where('Id_Curso',$id);
+ 		$crumbs[] = ['Principal',''];
+		$crumbs[] = ['Asignaturas','courses'];
+		$crumbs[] = ['Delete','courses/destroy'];
+
+		//if(Auth::access('super_admin')){
+			$this->view('courses\delete',[
+				'row'=>$row,
+	 			'crumbs'=>$crumbs,
+			]);
+		//}else{
+		//	$this->view('access-denied');
+		//}
+	}
 
 }

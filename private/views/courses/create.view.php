@@ -57,12 +57,6 @@ $this->view('includes/header')
 					</div>
 					<?php endif?>
 				</div>
-				<div class="row my-2">
-					<div class="form-group col-md-6">
-						<label for="Id_Curso">Id_Curso:</label>
-						<input class="form-control" value= "TTT45"  id="Id_Curso" name="Id_Curso">
-					</div>
-				</div>
 				<div class="form-group">
 						<label for="Detalle">Descripcion:</label>
 						<textarea class="form-control" id="Detalle" name="Detalle"></textarea>

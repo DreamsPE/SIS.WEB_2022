@@ -8,3 +8,4 @@ define('DBHOST', 'localhost');
 define('DBUSER', 'root');
 define('DBPASS', 'Nova|43886031%25');
 define('DBDRIVER', 'mysql');
+jdtojulianssdsa
